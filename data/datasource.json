@@ -1,8 +1,14 @@
 {
   "metadata": {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "last_updated": "2026-01-15",
-    "description": "Setup Skill 数据源 - 支持远程获取和本地数据混合模式"
+    "description": "Setup Skill 数据源 - 支持远程获取和本地数据混合模式",
+    "skills_count": 54,
+    "data_note": "All star counts are real and verified through direct GitHub page visits on 2026-01-15",
+    "data_source_credit": {
+      "url": "https://x.com/zstmfhy/status/2011355230336918009",
+      "description": "Skills data curated from X post by @zstmfhy"
+    }
   },
   "remote_sources": {
     "description": "远程 Skills 数据源，运行时由 Claude 访问获取最新数据",
@@ -530,413 +536,924 @@
   },
   "recommended_skills": [
     {
+      "name": "algorithmic-art",
+      "category": "Design & Creative",
+      "description": "Create generative art using p5.js with seeded randomness, flow fields, and particle systems",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "p5.js",
+        "generative-art",
+        "creative"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "brand-guidelines",
+      "category": "Communication",
+      "description": "Apply Anthropic's official brand colors and typography to artifacts",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "branding",
+        "design",
+        "typography"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "canvas-design",
+      "category": "Design & Creative",
+      "description": "Design beautiful visual art in .png and .pdf formats using design philosophies",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "design",
+        "visual-art",
+        "canvas"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "doc-coauthoring",
+      "category": "Communication",
+      "description": "Collaborative document authoring and editing workflows",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "documentation",
+        "collaboration",
+        "writing"
+      ],
+      "project_types": []
+    },
+    {
       "name": "docx",
-      "category": "文档处理",
-      "description": "Create, edit, and analyze Word documents with support for tracked changes, comments, formatting preservation, and text extraction",
+      "category": "Document Processing",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
       "github_url": "https://github.com/anthropics/skills/tree/main/skills/docx",
       "source": "anthropics/skills",
       "stars": 40945,
-      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
-      "tags": ["document", "word", "formatting", "editing"],
-      "project_types": ["nodejs", "python"]
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "docx",
+        "word",
+        "document",
+        "office"
+      ],
+      "project_types": [
+        "nodejs",
+        "python"
+      ]
+    },
+    {
+      "name": "frontend-design",
+      "category": "Development",
+      "description": "Instructs Claude to avoid 'AI slop' or generic aesthetics and to make bold design decisions. Works very well for React & Tailwind.",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "react",
+        "tailwind",
+        "frontend",
+        "design"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "internal-comms",
+      "category": "Communication",
+      "description": "Write internal communications like status reports, newsletters, and FAQs",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "communication",
+        "writing",
+        "business"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "mcp-builder",
+      "category": "Development",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers to integrate external APIs and services with LLMs using Python or TypeScript",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "mcp",
+        "api",
+        "integration"
+      ],
+      "project_types": [
+        "nodejs",
+        "python"
+      ]
     },
     {
       "name": "pdf",
-      "category": "文档处理",
+      "category": "Document Processing",
       "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms",
       "github_url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
       "source": "anthropics/skills",
       "stars": 40945,
-      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
-      "tags": ["document", "pdf", "extraction", "manipulation"],
-      "project_types": ["nodejs", "python"]
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "pdf",
+        "document",
+        "extraction"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
       "name": "pptx",
-      "category": "文档处理",
+      "category": "Document Processing",
       "description": "Create, edit, and analyze PowerPoint presentations with support for layouts, templates, charts, and automated slide generation",
       "github_url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
       "source": "anthropics/skills",
       "stars": 40945,
-      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
-      "tags": ["document", "powerpoint", "presentation", "slides"],
-      "project_types": ["nodejs", "python"]
-    },
-    {
-      "name": "xlsx",
-      "category": "文档处理",
-      "description": "Create, edit, and analyze Excel spreadsheets with support for formulas, formatting, data analysis, and visualization",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
-      "tags": ["document", "excel", "spreadsheet", "data"],
-      "project_types": ["nodejs", "python"]
-    },
-    {
-      "name": "doc-coauthoring",
-      "category": "文档处理",
-      "description": "Documentation co-authoring workflow with collaborative editing capabilities and real-time synchronization",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["document", "collaboration", "editing", "realtime"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "algorithmic-art",
-      "category": "设计与创意",
-      "description": "Create generative art using p5.js with seeded randomness, flow fields, and particle systems for artistic visualizations",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["art", "generative", "p5js", "visualization"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "canvas-design",
-      "category": "设计与创意",
-      "description": "Design beautiful visual art in .png and .pdf formats using design philosophies and creative principles",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["design", "visual", "graphics", "creative"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "slack-gif-creator",
-      "category": "设计与创意",
-      "description": "Create animated GIFs optimized for Slack's size constraints with smooth animations",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["animation", "slack", "gif", "media"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "brand-guidelines",
-      "category": "设计与创意",
-      "description": "Apply Anthropic's official brand colors and typography to artifacts for consistent visual identity",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["branding", "design", "styling", "identity"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "theme-factory",
-      "category": "设计与创意",
-      "description": "Artifact theme styling and customization factory for creating consistent design systems",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["theme", "styling", "customization", "design"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "frontend-design",
-      "category": "开发工具",
-      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Avoids generic AI aesthetics",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["frontend", "react", "tailwind", "design"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "web-artifacts-builder",
-      "category": "开发工具",
-      "description": "Build complex Claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui components",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["web", "react", "html", "components"],
-      "project_types": ["nodejs"]
-    },
-    {
-      "name": "mcp-builder",
-      "category": "开发工具",
-      "description": "Guide for creating high-quality MCP servers to integrate external APIs and services",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["mcp", "integration", "server", "api"],
-      "project_types": ["nodejs", "python"]
-    },
-    {
-      "name": "webapp-testing",
-      "category": "开发工具",
-      "description": "Test local web applications using Playwright for UI verification and debugging",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
-      "source": "anthropics/skills",
-      "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["testing", "playwright", "qa", "automation"],
-      "project_types": ["nodejs"]
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "pptx",
+        "powerpoint",
+        "presentation"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
       "name": "skill-creator",
-      "category": "开发工具",
+      "category": "Skill Creation",
       "description": "Interactive skill creation tool that guides you through building new skills with Q&A",
       "github_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
       "source": "anthropics/skills",
       "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["skill", "creation", "tool", "development"],
-      "project_types": ["nodejs"]
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "skill",
+        "creation",
+        "meta"
+      ],
+      "project_types": []
     },
     {
-      "name": "test-driven-development",
-      "category": "开发工具",
-      "description": "RED-GREEN-REFACTOR cycle with testing anti-patterns reference for TDD workflows",
-      "github_url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
-      "source": "obra/superpowers",
-      "stars": 22619,
-      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
-      "tags": ["testing", "tdd", "development", "quality"],
-      "project_types": ["nodejs", "python"]
-    },
-    {
-      "name": "systematic-debugging",
-      "category": "开发工具",
-      "description": "4-phase root cause process for debugging with root-cause-tracing and defense-in-depth techniques",
-      "github_url": "https://github.com/obra/superpowers/tree/main/skills/systematic-debugging",
-      "source": "obra/superpowers",
-      "stars": 22619,
-      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
-      "tags": ["debugging", "troubleshooting", "development", "analysis"],
-      "project_types": ["nodejs", "python"]
-    },
-    {
-      "name": "subagent-driven-development",
-      "category": "开发工具",
-      "description": "Fast iteration with two-stage review (spec compliance, then code quality) using parallel subagent workflows",
-      "github_url": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
-      "source": "obra/superpowers",
-      "stars": 22619,
-      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
-      "tags": ["development", "agents", "review", "workflow"],
-      "project_types": ["nodejs", "python"]
-    },
-    {
-      "name": "internal-comms",
-      "category": "通信与协作",
-      "description": "Write internal communications like status reports, newsletters, and FAQs with company-specific formats",
-      "github_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+      "name": "slack-gif-creator",
+      "category": "Design & Creative",
+      "description": "Create animated GIFs optimized for Slack's size constraints",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
       "source": "anthropics/skills",
       "stars": 40945,
-      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
-      "tags": ["communication", "writing", "internal", "business"],
-      "project_types": ["nodejs"]
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "gif",
+        "slack",
+        "animation"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "theme-factory",
+      "category": "Design & Creative",
+      "description": "Create and customize themes for applications and websites",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "theme",
+        "design",
+        "customization"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "web-artifacts-builder",
+      "category": "Development",
+      "description": "Build complex claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui components",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "react",
+        "tailwind",
+        "shadcn",
+        "artifacts"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "category": "Development",
+      "description": "Test local web applications using Playwright for UI verification and debugging",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "playwright",
+        "testing",
+        "automation"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "xlsx",
+      "category": "Document Processing",
+      "description": "Create, edit, and analyze Excel spreadsheets with support for formulas, formatting, data analysis, and visualization",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin marketplace add anthropics/skills",
+      "tags": [
+        "xlsx",
+        "excel",
+        "spreadsheet"
+      ],
+      "project_types": [
+        "python",
+        "nodejs"
+      ]
     },
     {
       "name": "brainstorming",
-      "category": "通信与协作",
-      "description": "Socratic design refinement and interactive brainstorming for design exploration",
+      "category": "Research & Planning",
+      "description": "Structured brainstorming sessions for idea generation and problem solving",
       "github_url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
       "source": "obra/superpowers",
       "stars": 22619,
-      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
-      "tags": ["collaboration", "design", "planning", "communication"],
-      "project_types": ["nodejs", "python"]
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "brainstorming",
+        "ideation",
+        "planning"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "category": "Automation & Systems",
+      "description": "Dispatch independent subagents for parallel task execution",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "agents",
+        "parallel",
+        "automation"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "executing-plans",
+      "category": "Research & Planning",
+      "description": "Execute structured plans with checkpoints and verification",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/executing-plans",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "planning",
+        "execution",
+        "workflow"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "category": "Development",
+      "description": "Guides completion of development work by presenting clear options and handling chosen workflow",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "git",
+        "development",
+        "workflow"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "receiving-code-review",
+      "category": "Development",
+      "description": "Handle and respond to code review feedback effectively",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/receiving-code-review",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "code-review",
+        "collaboration",
+        "git"
+      ],
+      "project_types": []
     },
     {
       "name": "requesting-code-review",
-      "category": "通信与协作",
-      "description": "Pre-review checklist and code review request workflow with severity reporting",
+      "category": "Development",
+      "description": "Create effective code review requests with proper context",
       "github_url": "https://github.com/obra/superpowers/tree/main/skills/requesting-code-review",
       "source": "obra/superpowers",
       "stars": 22619,
-      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
-      "tags": ["review", "collaboration", "quality", "communication"],
-      "project_types": ["nodejs", "python"]
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "code-review",
+        "collaboration",
+        "git"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "subagent-driven-development",
+      "category": "Development",
+      "description": "Dispatches independent subagents for individual tasks with code review checkpoints between iterations for rapid, controlled development",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "agents",
+        "development",
+        "automation"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "systematic-debugging",
+      "category": "Development",
+      "description": "Systematic approach to debugging with structured investigation",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/systematic-debugging",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "debugging",
+        "troubleshooting",
+        "development"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "test-driven-development",
+      "category": "Development",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code. Write the test first. Watch it fail. Write minimal code to pass.",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "tdd",
+        "testing",
+        "development"
+      ],
+      "project_types": [
+        "nodejs",
+        "python"
+      ]
     },
     {
       "name": "using-git-worktrees",
-      "category": "自动化与系统",
+      "category": "Development",
       "description": "Creates isolated git worktrees with smart directory selection and safety verification",
       "github_url": "https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees",
       "source": "obra/superpowers",
       "stars": 22619,
-      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
-      "tags": ["git", "automation", "workflow", "development"],
-      "project_types": ["nodejs", "python"]
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "git",
+        "worktrees",
+        "development"
+      ],
+      "project_types": []
     },
     {
-      "name": "dispatching-parallel-agents",
-      "category": "自动化与系统",
-      "description": "Concurrent subagent workflows for parallel task execution and coordination",
-      "github_url": "https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents",
+      "name": "using-superpowers",
+      "category": "Skill Creation",
+      "description": "Guide for using and discovering superpowers skills",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/using-superpowers",
       "source": "obra/superpowers",
       "stars": 22619,
-      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
-      "tags": ["agents", "automation", "parallel", "workflow"],
-      "project_types": ["nodejs", "python"]
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "meta",
+        "skills",
+        "discovery"
+      ],
+      "project_types": []
     },
     {
-      "name": "connect-apps",
-      "category": "自动化与系统",
-      "description": "Connect Claude to 500+ apps - send emails, create issues, post to Slack with Composio integration",
-      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/connect-apps",
-      "source": "ComposioHQ/awesome-claude-skills",
-      "stars": 19354,
-      "install_cmd": "/plugin add ./connect-apps-plugin",
-      "tags": ["integration", "automation", "apps", "api"],
-      "project_types": ["nodejs", "python"]
+      "name": "verification-before-completion",
+      "category": "Development",
+      "description": "Verify work is complete before marking tasks as done",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/verification-before-completion",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "verification",
+        "quality",
+        "workflow"
+      ],
+      "project_types": []
     },
     {
-      "name": "csv-data-summarizer",
-      "category": "数据与分析",
-      "description": "Automatically analyzes CSV files and generates comprehensive insights with visualizations",
-      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/csv-data-summarizer",
-      "source": "ComposioHQ/awesome-claude-skills",
-      "stars": 19354,
-      "install_cmd": "",
-      "tags": ["data", "analysis", "csv", "visualization"],
-      "project_types": ["nodejs", "python"]
+      "name": "writing-plans",
+      "category": "Research & Planning",
+      "description": "Create structured plans for complex tasks",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/writing-plans",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "planning",
+        "documentation",
+        "workflow"
+      ],
+      "project_types": []
     },
     {
-      "name": "postgres",
-      "category": "数据与分析",
-      "description": "Execute safe read-only SQL queries against PostgreSQL databases with multi-connection support",
-      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/postgres",
-      "source": "ComposioHQ/awesome-claude-skills",
-      "stars": 19354,
-      "install_cmd": "",
-      "tags": ["database", "sql", "data", "query"],
-      "project_types": ["nodejs", "python"]
+      "name": "writing-skills",
+      "category": "Skill Creation",
+      "description": "Guide for writing effective Claude skills",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/writing-skills",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers",
+      "tags": [
+        "skill",
+        "creation",
+        "documentation"
+      ],
+      "project_types": []
     },
     {
-      "name": "root-cause-tracing",
-      "category": "数据与分析",
-      "description": "Use when errors occur deep in execution and you need to trace back to find the original trigger",
-      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/root-cause-tracing",
+      "name": "artifacts-builder",
+      "category": "Development",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui)",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/artifacts-builder",
       "source": "ComposioHQ/awesome-claude-skills",
-      "stars": 19354,
-      "install_cmd": "",
-      "tags": ["debugging", "analysis", "troubleshooting", "development"],
-      "project_types": ["nodejs", "python"]
+      "stars": 19356,
+      "install_cmd": "cp -r artifacts-builder ~/.claude/skills/",
+      "tags": [
+        "react",
+        "tailwind",
+        "shadcn",
+        "artifacts"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "changelog-generator",
+      "category": "Development",
+      "description": "Automatically creates user-facing changelogs from git commits by analyzing history and transforming technical commits into customer-friendly release notes",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/changelog-generator",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "install_cmd": "cp -r changelog-generator ~/.claude/skills/",
+      "tags": [
+        "changelog",
+        "git",
+        "documentation"
+      ],
+      "project_types": []
     },
     {
       "name": "competitive-ads-extractor",
-      "category": "商业与营销",
-      "description": "Extracts and analyzes competitors' ads from ad libraries to understand messaging and creative approaches",
-      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/competitive-ads-extractor",
+      "category": "Business & Marketing",
+      "description": "Extract and analyze competitive advertising data",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/competitive-ads-extractor",
       "source": "ComposioHQ/awesome-claude-skills",
-      "stars": 19354,
-      "install_cmd": "",
-      "tags": ["marketing", "analysis", "business", "research"],
-      "project_types": ["nodejs", "python"]
+      "stars": 19356,
+      "install_cmd": "cp -r competitive-ads-extractor ~/.claude/skills/",
+      "tags": [
+        "marketing",
+        "analysis",
+        "competitive"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "connect",
+      "category": "Automation & Systems",
+      "description": "Connect Claude to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/connect",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "install_cmd": "cp -r connect ~/.claude/skills/",
+      "tags": [
+        "integration",
+        "automation",
+        "api"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "content-research-writer",
+      "category": "Communication",
+      "description": "Research topics and write comprehensive content",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "install_cmd": "cp -r content-research-writer ~/.claude/skills/",
+      "tags": [
+        "research",
+        "writing",
+        "content"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "developer-growth-analysis",
+      "category": "Data & Analysis",
+      "description": "Analyze coding patterns and developer growth metrics",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/developer-growth-analysis",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "install_cmd": "cp -r developer-growth-analysis ~/.claude/skills/",
+      "tags": [
+        "analytics",
+        "development",
+        "metrics"
+      ],
+      "project_types": []
     },
     {
       "name": "domain-name-brainstormer",
-      "category": "商业与营销",
-      "description": "Generates creative domain name ideas and checks availability across multiple TLDs including .com, .io, .dev, and .ai",
-      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/domain-name-brainstormer",
+      "category": "Business & Marketing",
+      "description": "Generate creative domain name ideas for projects and businesses",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/domain-name-brainstormer",
       "source": "ComposioHQ/awesome-claude-skills",
-      "stars": 19354,
-      "install_cmd": "",
-      "tags": ["business", "domain", "brainstorming", "tools"],
-      "project_types": ["nodejs"]
+      "stars": 19356,
+      "install_cmd": "cp -r domain-name-brainstormer ~/.claude/skills/",
+      "tags": [
+        "domain",
+        "branding",
+        "brainstorming"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "langsmith-fetch",
+      "category": "Development",
+      "description": "Debug LangChain and LangGraph agents by automatically fetching and analyzing execution traces from LangSmith Studio. First AI observability skill for Claude Code",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/langsmith-fetch",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "install_cmd": "cp -r langsmith-fetch ~/.claude/skills/",
+      "tags": [
+        "langchain",
+        "debugging",
+        "observability"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
       "name": "lead-research-assistant",
-      "category": "商业与营销",
-      "description": "Identifies and qualifies high-quality leads by analyzing your product, searching for target companies, and providing actionable outreach strategies",
-      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/lead-research-assistant",
+      "category": "Business & Marketing",
+      "description": "Research and qualify sales leads",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/lead-research-assistant",
       "source": "ComposioHQ/awesome-claude-skills",
-      "stars": 19354,
-      "install_cmd": "",
-      "tags": ["business", "research", "sales", "marketing"],
-      "project_types": ["nodejs", "python"]
+      "stars": 19356,
+      "install_cmd": "cp -r lead-research-assistant ~/.claude/skills/",
+      "tags": [
+        "sales",
+        "research",
+        "leads"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "tailored-resume-generator",
+      "category": "Productivity",
+      "description": "Analyzes job descriptions and generates tailored resumes",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/tailored-resume-generator",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "install_cmd": "cp -r tailored-resume-generator ~/.claude/skills/",
+      "tags": [
+        "resume",
+        "job",
+        "career"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "video-downloader",
+      "category": "Media & Content",
+      "description": "Download videos from various platforms",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/video-downloader",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "install_cmd": "cp -r video-downloader ~/.claude/skills/",
+      "tags": [
+        "video",
+        "download",
+        "media"
+      ],
+      "project_types": []
     },
     {
       "name": "bioinformatics-analysis",
-      "category": "科学与研究",
+      "category": "Scientific",
       "description": "Sequence analysis, single-cell RNA-seq, gene regulatory networks, variant annotation, phylogenetic analysis",
-      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/bioinformatics",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
       "source": "K-Dense-AI/claude-scientific-skills",
-      "stars": 5927,
+      "stars": 5929,
       "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
-      "tags": ["science", "bioinformatics", "genomics", "research"],
-      "project_types": ["python"]
+      "tags": [
+        "bioinformatics",
+        "genomics",
+        "rna-seq"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
       "name": "cheminformatics-drug-discovery",
-      "category": "科学与研究",
+      "category": "Scientific",
       "description": "Molecular property prediction, virtual screening, ADMET analysis, molecular docking, lead optimization",
-      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cheminformatics",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
       "source": "K-Dense-AI/claude-scientific-skills",
-      "stars": 5927,
+      "stars": 5929,
       "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
-      "tags": ["science", "chemistry", "drug-discovery", "research"],
-      "project_types": ["python"]
+      "tags": [
+        "chemistry",
+        "drug-discovery",
+        "rdkit"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
       "name": "clinical-research",
-      "category": "科学与研究",
+      "category": "Scientific",
       "description": "Clinical trials, pharmacogenomics, variant interpretation, drug safety, clinical decision support, treatment planning",
-      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinical",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
       "source": "K-Dense-AI/claude-scientific-skills",
-      "stars": 5927,
+      "stars": 5929,
       "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
-      "tags": ["science", "clinical", "healthcare", "research"],
-      "project_types": ["python"]
+      "tags": [
+        "clinical",
+        "medicine",
+        "research"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
       "name": "medical-imaging",
-      "category": "科学与研究",
+      "category": "Scientific",
       "description": "DICOM processing, whole slide image analysis, computational pathology, radiology workflows",
-      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/medical-imaging",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
       "source": "K-Dense-AI/claude-scientific-skills",
-      "stars": 5927,
+      "stars": 5929,
       "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
-      "tags": ["science", "medical", "imaging", "healthcare"],
-      "project_types": ["python"]
+      "tags": [
+        "imaging",
+        "dicom",
+        "pathology"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
-      "name": "machine-learning",
-      "category": "科学与研究",
+      "name": "proteomics-mass-spectrometry",
+      "category": "Scientific",
+      "description": "LC-MS/MS processing, peptide identification, spectral matching, protein quantification",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5929,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": [
+        "proteomics",
+        "mass-spec",
+        "biology"
+      ],
+      "project_types": [
+        "python"
+      ]
+    },
+    {
+      "name": "scientific-visualization",
+      "category": "Scientific",
+      "description": "Publication-quality figures, statistical analysis, network analysis, time series visualization",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5929,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": [
+        "visualization",
+        "matplotlib",
+        "plotting"
+      ],
+      "project_types": [
+        "python"
+      ]
+    },
+    {
+      "name": "machine-learning-ai",
+      "category": "Scientific",
       "description": "Deep learning, reinforcement learning, time series analysis, model interpretability, Bayesian methods",
-      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/machine-learning",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
       "source": "K-Dense-AI/claude-scientific-skills",
-      "stars": 5927,
+      "stars": 5929,
       "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
-      "tags": ["science", "ml", "ai", "research"],
-      "project_types": ["python"]
+      "tags": [
+        "machine-learning",
+        "pytorch",
+        "deep-learning"
+      ],
+      "project_types": [
+        "python"
+      ]
     },
     {
-      "name": "obra/superpowers",
-      "category": "社区库与集合",
-      "description": "Core skills library for Claude Code with 20+ battle-tested skills including TDD, debugging, and collaboration patterns",
-      "github_url": "https://github.com/obra/superpowers",
-      "source": "obra/superpowers",
-      "stars": 22619,
-      "install_cmd": "/plugin marketplace add obra/superpowers-marketplace",
-      "tags": ["library", "tdd", "debugging", "development"],
-      "project_types": ["nodejs", "python"]
+      "name": "scientific-communication",
+      "category": "Scientific",
+      "description": "Literature review, peer review, scientific writing, document processing, posters, slides, schematics, citation management",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5929,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": [
+        "writing",
+        "publication",
+        "research"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "ios-simulator-skill",
+      "category": "Development",
+      "description": "An IOS Simulator Skill for ClaudeCode. Use it to optimise Claude's ability to build, run and interact with your apps, without using up any of the available token/context budget.",
+      "github_url": "https://github.com/conorluddy/ios-simulator-skill",
+      "source": "conorluddy/ios-simulator-skill",
+      "stars": 307,
+      "install_cmd": "cp -r ios-simulator-skill ~/.claude/skills/",
+      "tags": [
+        "ios",
+        "simulator",
+        "testing",
+        "xcode"
+      ],
+      "project_types": [
+        "swift"
+      ]
+    },
+    {
+      "name": "ffuf-web-fuzzing",
+      "category": "Security",
+      "description": "A Claude Code skill that integrates the powerful web fuzzer ffuf (Fuzz Faster U Fool) for web security testing and reconnaissance tasks. Enables intelligent web fuzzing operations to discover hidden directories, files, subdomains, and API endpoints.",
+      "github_url": "https://github.com/jthack/ffuf_claude_skill",
+      "source": "jthack/ffuf_claude_skill",
+      "stars": 93,
+      "install_cmd": "cp -r ffuf-skill ~/.claude/skills/",
+      "tags": [
+        "security",
+        "fuzzing",
+        "pentesting",
+        "ffuf"
+      ],
+      "project_types": []
+    },
+    {
+      "name": "playwright-skill",
+      "category": "Development",
+      "description": "Claude Code Skill for browser automation with Playwright. Model-invoked - Claude autonomously writes and executes custom automation on-the-fly - from simple page tests to complex multi-step flows.",
+      "github_url": "https://github.com/lackeyjb/playwright-skill",
+      "source": "lackeyjb/playwright-skill",
+      "stars": 1276,
+      "install_cmd": "/plugin marketplace add lackeyjb/playwright-skill",
+      "tags": [
+        "playwright",
+        "automation",
+        "testing",
+        "browser"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "claude-d3js-skill",
+      "category": "Data & Analysis",
+      "description": "A Claude skill for d3.js visualizations. Create interactive data visualizations and charts.",
+      "github_url": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
+      "source": "chrisvoncsefalvay/claude-d3js-skill",
+      "stars": 65,
+      "install_cmd": "cp -r claude-d3js-skill ~/.claude/skills/",
+      "tags": [
+        "d3js",
+        "visualization",
+        "charts",
+        "javascript"
+      ],
+      "project_types": [
+        "nodejs"
+      ]
     },
     {
       "name": "Skill_Seekers",
-      "category": "社区库与集合",
-      "description": "Automatically converts any documentation website into a Claude AI skill in minutes",
+      "category": "Skill Creation",
+      "description": "Automatically convert documentation websites, GitHub repositories, and PDFs into Claude AI skills in minutes. Supports multiple LLM platforms including Claude, Gemini, and OpenAI.",
       "github_url": "https://github.com/yusufkaraaslan/Skill_Seekers",
-      "source": "community",
-      "stars": 0,
-      "install_cmd": "",
-      "tags": ["tool", "conversion", "documentation", "automation"],
-      "project_types": ["nodejs", "python"]
+      "source": "yusufkaraaslan/Skill_Seekers",
+      "stars": 6665,
+      "install_cmd": "pip install skill-seekers",
+      "tags": [
+        "skill",
+        "documentation",
+        "conversion",
+        "automation"
+      ],
+      "project_types": [
+        "python"
+      ]
     }
   ],
   "recommended_mcp": [],
-  "recommended_plugins": []
+  "recommended_plugins": [],
+  "skill_sources": {
+    "anthropics/skills": {
+      "url": "https://github.com/anthropics/skills",
+      "stars": 40945,
+      "forks": 3800,
+      "description": "Official Anthropic Skills repository"
+    },
+    "obra/superpowers": {
+      "url": "https://github.com/obra/superpowers",
+      "stars": 22619,
+      "forks": 1700,
+      "description": "Core skills library for Claude Code with 20+ battle-tested skills"
+    },
+    "ComposioHQ/awesome-claude-skills": {
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "stars": 19356,
+      "forks": 2000,
+      "description": "A curated list of awesome Claude Skills, resources, and tools"
+    },
+    "K-Dense-AI/claude-scientific-skills": {
+      "url": "https://github.com/K-Dense-AI/claude-scientific-skills",
+      "stars": 5929,
+      "forks": 711,
+      "description": "A comprehensive collection of 140 ready-to-use scientific skills for Claude"
+    },
+    "travisvn/awesome-claude-skills": {
+      "url": "https://github.com/travisvn/awesome-claude-skills",
+      "stars": 4990,
+      "forks": 315,
+      "description": "A curated list of awesome Claude Skills for Claude Code"
+    }
+  },
+  "skill_categories_stats": {
+    "Design & Creative": 4,
+    "Communication": 4,
+    "Document Processing": 4,
+    "Development": 17,
+    "Skill Creation": 4,
+    "Research & Planning": 3,
+    "Automation & Systems": 2,
+    "Business & Marketing": 3,
+    "Data & Analysis": 2,
+    "Productivity": 1,
+    "Media & Content": 1,
+    "Scientific": 8,
+    "Security": 1
+  }
 }

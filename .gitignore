@@ -15,3 +15,7 @@
 # Temp
 *.tmp
 *.bak
+
+# Auto-generated claude-mem files
+*/CLAUDE.md
+!data/CLAUDE.md

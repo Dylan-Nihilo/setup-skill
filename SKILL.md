@@ -171,23 +171,76 @@ WebFetch → 读取仓库 README → 提取 Skills 列表 → 理解每个 Skill
 
 ### 第六步：执行安装
 
-用户确认后，执行安装：
+用户确认后，根据 skill 来源采用不同安装策略：
 
-**安装 Skills**：
+#### 6.1 本地数据源 Skills（直接安装）
+
+如果推荐的 skill 在 `datasource.json` 中且有 `install_cmd`，**直接执行安装命令**：
+
 ```bash
+# 检查 install_cmd 字段
+# 如果存在，直接执行：
+/plugin marketplace add anthropics/skills
+/plugin marketplace add obra/superpowers
+/plugin marketplace add lackeyjb/playwright-skill
+# 等等...
+```
+
+**本地数据源覆盖的安装命令模式**：
+
+| 来源 | 安装命令 |
+|------|----------|
+| anthropics/skills | `/plugin marketplace add anthropics/skills` |
+| obra/superpowers | `/plugin marketplace add obra/superpowers` |
+| K-Dense-AI | `/plugin install scientific-skills@claude-scientific-skills` |
+| lackeyjb/playwright-skill | `/plugin marketplace add lackeyjb/playwright-skill` |
+| ComposioHQ/* | `cp -r <skill-name> ~/.claude/skills/` |
+| 独立仓库 | `cp -r <skill-name> ~/.claude/skills/` 或 `pip install <package>` |
+
+#### 6.2 远程 Skills（搜索获取）
+
+如果推荐的 skill **不在本地数据源中**，使用 WebSearch 搜索获取安装信息：
+
+```
+WebSearch: "claude code skill <skill-name> install github"
+WebSearch: "<skill-name> claude plugin installation"
+```
+
+**搜索后处理**：
+1. 从搜索结果中提取 GitHub 仓库地址
+2. 获取安装命令（通常在 README 中）
+3. 向用户展示安装选项：
+
+```markdown
+## 远程 Skill: <skill-name>
+
+**来源**: <github-url>
+**安装方式**:
+- 方式一: `/plugin install <plugin-name>@<marketplace>`
+- 方式二: `openskills install -g -y <github-url>`
+
+是否安装？
+```
+
+#### 6.3 手动安装（备选）
+
+如果自动安装失败或用户偏好手动：
+
+```bash
+# 从 GitHub 安装
 openskills install -g -y <github-url>
 cp -r ~/.agent/skills/<skill-name> ~/.claude/skills/
+
+# 或直接克隆
+git clone <github-url> ~/.claude/skills/<skill-name>
 ```
 
-**安装 Plugins**：
-```bash
-/plugin install <plugin-name>
-```
+#### 6.4 配置 MCP
 
-**配置 MCP**：
 修改 `~/.claude.json` 添加 MCP server 配置
 
-**创建/更新 CLAUDE.md**：
+#### 6.5 创建/更新 CLAUDE.md
+
 使用 `templates/CLAUDE.md.template` 模板，根据项目情况填充内容
 
 ### 第七步：生成报告
