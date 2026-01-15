@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Local config
+.claude/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Temp
+*.tmp
+*.bak

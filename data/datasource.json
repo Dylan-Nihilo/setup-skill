@@ -1,0 +1,942 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "last_updated": "2026-01-15",
+    "description": "Setup Skill 数据源 - 支持远程获取和本地数据混合模式"
+  },
+  "remote_sources": {
+    "description": "远程 Skills 数据源，运行时由 Claude 访问获取最新数据",
+    "skills": [
+      {
+        "name": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills",
+        "type": "official",
+        "description": "Anthropic 官方 Skills 仓库"
+      },
+      {
+        "name": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers",
+        "type": "community",
+        "description": "20+ 实战 Skills，包含 TDD、调试、协作模式"
+      },
+      {
+        "name": "travisvn/awesome-claude-skills",
+        "url": "https://github.com/travisvn/awesome-claude-skills",
+        "type": "awesome-list",
+        "description": "社区精选 Skills 列表"
+      },
+      {
+        "name": "ComposioHQ/awesome-claude-skills",
+        "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+        "type": "awesome-list",
+        "description": "Composio 维护的 Skills 列表"
+      },
+      {
+        "name": "K-Dense-AI/claude-scientific-skills",
+        "url": "https://github.com/K-Dense-AI/claude-scientific-skills",
+        "type": "domain-specific",
+        "description": "科学计算相关 Skills"
+      }
+    ],
+    "mcp": [
+      {
+        "name": "MCP Registry",
+        "url": "https://registry.modelcontextprotocol.io/",
+        "type": "official",
+        "description": "官方 MCP 服务器注册表"
+      },
+      {
+        "name": "awesome-mcp-servers",
+        "url": "https://github.com/wong2/awesome-mcp-servers",
+        "type": "awesome-list",
+        "description": "社区精选 MCP 服务器"
+      }
+    ]
+  },
+  "skills": {
+    "marketplace": "skillsmp.com",
+    "total_count": 52775,
+    "categories": {
+      "Tools": {
+        "count": 17448,
+        "description": "开发工具和集成",
+        "subcategories": {
+          "Productivity & Integration": 10305,
+          "Automation Tools": 5218,
+          "Debugging": 3349,
+          "System Administration": 1944,
+          "IDE Plugins": 1751,
+          "CLI Tools": 443,
+          "Domain & DNS Tools": 98
+        }
+      },
+      "Development": {
+        "count": 15805,
+        "description": "应用开发和框架",
+        "subcategories": {
+          "CMS & Platforms": 5748,
+          "Architecture Patterns": 4438,
+          "Full Stack": 2940,
+          "Frontend": 2653,
+          "Scripting": 1493,
+          "Game Development": 1458,
+          "Mobile": 1226,
+          "Backend": 1041,
+          "Package & Distribution": 562,
+          "E-commerce Development": 495,
+          "Framework Internals": 458
+        }
+      },
+      "Data & AI": {
+        "count": 10431,
+        "description": "数据处理和AI相关",
+        "subcategories": {
+          "LLM & AI": 8207,
+          "Data Analysis": 1417,
+          "Data Engineering": 1173,
+          "Machine Learning": 922
+        }
+      },
+      "Business": {
+        "count": 8903,
+        "description": "业务和工作流",
+        "subcategories": {
+          "Project Management": 5649,
+          "Sales & Marketing": 3779,
+          "Finance & Investment": 2002,
+          "Health & Fitness": 1683,
+          "Business Apps": 423,
+          "Real Estate & Legal": 362,
+          "Payment": 87,
+          "E-commerce": 51
+        }
+      },
+      "DevOps": {
+        "count": 8529,
+        "description": "部署和运维",
+        "subcategories": {
+          "CI/CD": 4863,
+          "Git Workflows": 3733,
+          "Cloud": 1349,
+          "Containers": 918,
+          "Monitoring": 622
+        }
+      },
+      "Testing & Security": {
+        "count": 6249,
+        "description": "测试和安全",
+        "subcategories": {
+          "Testing": 2700,
+          "Code Quality": 2408,
+          "Security": 1348
+        }
+      },
+      "Documentation": {
+        "count": 4501,
+        "description": "文档和知识库",
+        "subcategories": {
+          "Knowledge Base": 3505,
+          "Technical Docs": 1357,
+          "Education": 1313
+        }
+      },
+      "Content & Media": {
+        "count": 4375,
+        "description": "内容和媒体",
+        "subcategories": {
+          "Content Creation": 2309,
+          "Documents": 1525,
+          "Design": 1037,
+          "Media": 357
+        }
+      },
+      "Lifestyle": {
+        "count": 2188,
+        "description": "生活方式相关",
+        "subcategories": {
+          "Divination & Mysticism": 1806,
+          "Literature & Writing": 172,
+          "Philosophy & Ethics": 94,
+          "Arts & Crafts": 87,
+          "Wellness & Health": 71,
+          "Culinary Arts": 42
+        }
+      },
+      "Research": {
+        "count": 2081,
+        "description": "研究和学术",
+        "subcategories": {
+          "Academic": 1247,
+          "Scientific Computing": 567,
+          "Computational Chemistry": 485,
+          "Bioinformatics": 451,
+          "Lab Tools": 83,
+          "Astronomy & Physics": 67
+        }
+      },
+      "Databases": {
+        "count": 1204,
+        "description": "数据库相关",
+        "subcategories": {
+          "SQL Databases": 910,
+          "Database Tools": 349,
+          "NoSQL Databases": 260
+        }
+      },
+      "Blockchain": {
+        "count": 401,
+        "description": "区块链和Web3",
+        "subcategories": {
+          "Web3 Tools": 271,
+          "Smart Contracts": 184,
+          "DeFi": 161
+        }
+      }
+    },
+    "installation_guide": {
+      "personal_skills": "~/.claude/skills/",
+      "project_skills": ".claude/skills/",
+      "enterprise_skills": "通过Managed Settings配置"
+    }
+  },
+  "mcp_servers": {
+    "registry": "registry.modelcontextprotocol.io",
+    "description": "Model Context Protocol服务器",
+    "installation_methods": [
+      {
+        "name": "HTTP Server",
+        "command": "claude mcp add --transport http <name> <url>",
+        "description": "连接到远程HTTP MCP服务器"
+      },
+      {
+        "name": "SSE Server",
+        "command": "claude mcp add --transport sse <name> <url>",
+        "description": "连接到Server-Sent Events服务器（已弃用）"
+      },
+      {
+        "name": "Stdio Server",
+        "command": "claude mcp add --transport stdio <name> -- <command>",
+        "description": "连接到本地stdio MCP服务器"
+      }
+    ],
+    "popular_categories": [
+      "Web Search & Crawling",
+      "Database Access",
+      "File Management",
+      "Git & Version Control",
+      "Issue Tracking",
+      "Cloud Services",
+      "Communication",
+      "Data Analysis",
+      "Code Quality",
+      "Monitoring & Logging"
+    ],
+    "scope_options": {
+      "local": "仅在当前项目中对用户可用（默认）",
+      "project": "通过.mcp.json与项目中的每个人共享",
+      "user": "在所有项目中对用户可用"
+    }
+  },
+  "models": {
+    "description": "Claude Code支持的模型",
+    "available_models": [
+      {
+        "name": "Claude Opus 4.5",
+        "api_id": "claude-opus-4-5-20251101",
+        "alias": "claude-opus-4-5",
+        "release_date": "2025-11-01",
+        "capabilities": [
+          "最强推理",
+          "复杂任务",
+          "代码生成",
+          "长上下文"
+        ],
+        "best_for": "复杂问题、长任务、代理工作流"
+      },
+      {
+        "name": "Claude Sonnet 4.5",
+        "api_id": "claude-sonnet-4-5-20250929",
+        "alias": "claude-sonnet-4-5",
+        "release_date": "2025-09-29",
+        "capabilities": [
+          "平衡性能",
+          "快速响应",
+          "代码生成",
+          "成本效益"
+        ],
+        "best_for": "日常开发、快速迭代、成本考虑"
+      },
+      {
+        "name": "Claude Haiku 4.5",
+        "api_id": "claude-haiku-4-5-20251001",
+        "alias": "claude-haiku-4-5",
+        "release_date": "2025-10-01",
+        "capabilities": [
+          "快速",
+          "低成本",
+          "代码生成",
+          "代理任务"
+        ],
+        "best_for": "简单任务、快速响应、成本优化"
+      }
+    ],
+    "configuration_methods": [
+      {
+        "method": "CLI命令",
+        "command": "/model",
+        "description": "在Claude Code中使用/model命令切换模型"
+      },
+      {
+        "method": "settings.json",
+        "key": "model",
+        "description": "在settings.json中配置默认模型"
+      },
+      {
+        "method": "环境变量",
+        "key": "CLAUDE_MODEL",
+        "description": "通过环境变量指定模型"
+      }
+    ]
+  },
+  "plugins": {
+    "description": "Claude Code插件系统",
+    "marketplace": "Claude Code内置插件市场",
+    "configuration": {
+      "location": "~/.claude/settings.json或.claude/settings.json",
+      "key": "enabledPlugins",
+      "scope": [
+        "user",
+        "project",
+        "local"
+      ]
+    },
+    "plugin_capabilities": [
+      "提供MCP服务器",
+      "提供Skills",
+      "扩展命令",
+      "自定义工具"
+    ]
+  },
+  "configuration_scopes": {
+    "description": "Claude Code配置作用域系统",
+    "scopes": [
+      {
+        "name": "Managed",
+        "location": "系统级managed-settings.json",
+        "level": "最高优先级",
+        "shared": "由IT部署",
+        "use_case": "组织级安全策略和合规要求"
+      },
+      {
+        "name": "User",
+        "location": "~/.claude/",
+        "level": "跨所有项目",
+        "shared": "否",
+        "use_case": "个人偏好和工具配置"
+      },
+      {
+        "name": "Project",
+        "location": ".claude/",
+        "level": "此存储库",
+        "shared": "是（提交到git）",
+        "use_case": "团队共享设置"
+      },
+      {
+        "name": "Local",
+        "location": ".claude/*.local.*",
+        "level": "仅此存储库",
+        "shared": "否（gitignored）",
+        "use_case": "个人覆盖和实验"
+      }
+    ]
+  },
+  "configuration_files": {
+    "settings_json": {
+      "path": "~/.claude/settings.json或.claude/settings.json",
+      "description": "主配置文件",
+      "contains": [
+        "权限设置",
+        "环境变量",
+        "插件配置",
+        "钩子配置",
+        "模型设置"
+      ]
+    },
+    "mcp_json": {
+      "path": ".mcp.json或~/.claude.json",
+      "description": "MCP服务器配置",
+      "contains": [
+        "MCP服务器定义",
+        "传输方式",
+        "环境变量",
+        "认证信息"
+      ]
+    },
+    "claude_md": {
+      "path": "CLAUDE.md或.claude/CLAUDE.md",
+      "description": "项目级说明文件",
+      "contains": [
+        "项目指南",
+        "编码标准",
+        "最佳实践"
+      ]
+    },
+    "skill_md": {
+      "path": ".claude/skills/*/SKILL.md",
+      "description": "Skill定义文件",
+      "contains": [
+        "Skill元数据",
+        "Skill说明",
+        "触发条件"
+      ]
+    }
+  },
+  "project_detection": {
+    "description": "项目类型识别规则",
+    "detection_methods": [
+      {
+        "type": "package.json",
+        "language": "JavaScript/TypeScript",
+        "indicators": [
+          "name",
+          "dependencies",
+          "devDependencies"
+        ]
+      },
+      {
+        "type": "requirements.txt",
+        "language": "Python",
+        "indicators": [
+          "packages",
+          "versions"
+        ]
+      },
+      {
+        "type": "go.mod",
+        "language": "Go",
+        "indicators": [
+          "module",
+          "require"
+        ]
+      },
+      {
+        "type": "Cargo.toml",
+        "language": "Rust",
+        "indicators": [
+          "package",
+          "dependencies"
+        ]
+      },
+      {
+        "type": "pom.xml",
+        "language": "Java",
+        "indicators": [
+          "groupId",
+          "artifactId",
+          "dependencies"
+        ]
+      },
+      {
+        "type": "Gemfile",
+        "language": "Ruby",
+        "indicators": [
+          "source",
+          "gem"
+        ]
+      },
+      {
+        "type": ".csproj",
+        "language": "C#/.NET",
+        "indicators": [
+          "PropertyGroup",
+          "ItemGroup"
+        ]
+      }
+    ]
+  },
+  "recommendation_rules": {
+    "description": "技能推荐规则",
+    "rules": [
+      {
+        "condition": "项目包含package.json",
+        "recommendations": [
+          "JavaScript/TypeScript相关skills",
+          "Node.js工具",
+          "前端框架skills"
+        ]
+      },
+      {
+        "condition": "项目包含requirements.txt",
+        "recommendations": [
+          "Python相关skills",
+          "数据分析tools",
+          "机器学习skills"
+        ]
+      },
+      {
+        "condition": "项目包含.git",
+        "recommendations": [
+          "Git工作流skills",
+          "CI/CD相关",
+          "代码审查tools"
+        ]
+      },
+      {
+        "condition": "项目包含Docker文件",
+        "recommendations": [
+          "容器相关skills",
+          "DevOps tools",
+          "部署自动化"
+        ]
+      }
+    ]
+  },
+  "useful_resources": {
+    "official_docs": [
+      {
+        "name": "Claude Code官方文档",
+        "url": "https://code.claude.com/docs/zh-CN/overview"
+      },
+      {
+        "name": "Agent Skills指南",
+        "url": "https://code.claude.com/docs/zh-CN/skills"
+      },
+      {
+        "name": "MCP集成指南",
+        "url": "https://code.claude.com/docs/zh-CN/mcp"
+      },
+      {
+        "name": "配置参考",
+        "url": "https://code.claude.com/docs/zh-CN/settings"
+      }
+    ],
+    "community_resources": [
+      {
+        "name": "SkillsMP - Skills市场",
+        "url": "https://skillsmp.com/",
+        "description": "52,000+个社区skills"
+      },
+      {
+        "name": "MCP注册表",
+        "url": "https://registry.modelcontextprotocol.io/",
+        "description": "官方MCP服务器注册表"
+      },
+      {
+        "name": "Awesome MCP Servers",
+        "url": "https://mcpservers.org/",
+        "description": "精选MCP服务器集合"
+      }
+    ]
+  },
+  "recommended_skills": [
+    {
+      "name": "docx",
+      "category": "文档处理",
+      "description": "Create, edit, and analyze Word documents with support for tracked changes, comments, formatting preservation, and text extraction",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
+      "tags": ["document", "word", "formatting", "editing"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "pdf",
+      "category": "文档处理",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
+      "tags": ["document", "pdf", "extraction", "manipulation"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "pptx",
+      "category": "文档处理",
+      "description": "Create, edit, and analyze PowerPoint presentations with support for layouts, templates, charts, and automated slide generation",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
+      "tags": ["document", "powerpoint", "presentation", "slides"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "xlsx",
+      "category": "文档处理",
+      "description": "Create, edit, and analyze Excel spreadsheets with support for formulas, formatting, data analysis, and visualization",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install document-skills@anthropic-agent-skills",
+      "tags": ["document", "excel", "spreadsheet", "data"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "doc-coauthoring",
+      "category": "文档处理",
+      "description": "Documentation co-authoring workflow with collaborative editing capabilities and real-time synchronization",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["document", "collaboration", "editing", "realtime"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "algorithmic-art",
+      "category": "设计与创意",
+      "description": "Create generative art using p5.js with seeded randomness, flow fields, and particle systems for artistic visualizations",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["art", "generative", "p5js", "visualization"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "canvas-design",
+      "category": "设计与创意",
+      "description": "Design beautiful visual art in .png and .pdf formats using design philosophies and creative principles",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["design", "visual", "graphics", "creative"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "slack-gif-creator",
+      "category": "设计与创意",
+      "description": "Create animated GIFs optimized for Slack's size constraints with smooth animations",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["animation", "slack", "gif", "media"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "brand-guidelines",
+      "category": "设计与创意",
+      "description": "Apply Anthropic's official brand colors and typography to artifacts for consistent visual identity",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["branding", "design", "styling", "identity"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "theme-factory",
+      "category": "设计与创意",
+      "description": "Artifact theme styling and customization factory for creating consistent design systems",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["theme", "styling", "customization", "design"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "frontend-design",
+      "category": "开发工具",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Avoids generic AI aesthetics",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["frontend", "react", "tailwind", "design"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "web-artifacts-builder",
+      "category": "开发工具",
+      "description": "Build complex Claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui components",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["web", "react", "html", "components"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "mcp-builder",
+      "category": "开发工具",
+      "description": "Guide for creating high-quality MCP servers to integrate external APIs and services",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["mcp", "integration", "server", "api"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "webapp-testing",
+      "category": "开发工具",
+      "description": "Test local web applications using Playwright for UI verification and debugging",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["testing", "playwright", "qa", "automation"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "skill-creator",
+      "category": "开发工具",
+      "description": "Interactive skill creation tool that guides you through building new skills with Q&A",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["skill", "creation", "tool", "development"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "test-driven-development",
+      "category": "开发工具",
+      "description": "RED-GREEN-REFACTOR cycle with testing anti-patterns reference for TDD workflows",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
+      "tags": ["testing", "tdd", "development", "quality"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "systematic-debugging",
+      "category": "开发工具",
+      "description": "4-phase root cause process for debugging with root-cause-tracing and defense-in-depth techniques",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/systematic-debugging",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
+      "tags": ["debugging", "troubleshooting", "development", "analysis"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "subagent-driven-development",
+      "category": "开发工具",
+      "description": "Fast iteration with two-stage review (spec compliance, then code quality) using parallel subagent workflows",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
+      "tags": ["development", "agents", "review", "workflow"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "internal-comms",
+      "category": "通信与协作",
+      "description": "Write internal communications like status reports, newsletters, and FAQs with company-specific formats",
+      "github_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+      "source": "anthropics/skills",
+      "stars": 40945,
+      "install_cmd": "/plugin install example-skills@anthropic-agent-skills",
+      "tags": ["communication", "writing", "internal", "business"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "brainstorming",
+      "category": "通信与协作",
+      "description": "Socratic design refinement and interactive brainstorming for design exploration",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
+      "tags": ["collaboration", "design", "planning", "communication"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "requesting-code-review",
+      "category": "通信与协作",
+      "description": "Pre-review checklist and code review request workflow with severity reporting",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/requesting-code-review",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
+      "tags": ["review", "collaboration", "quality", "communication"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "using-git-worktrees",
+      "category": "自动化与系统",
+      "description": "Creates isolated git worktrees with smart directory selection and safety verification",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
+      "tags": ["git", "automation", "workflow", "development"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "category": "自动化与系统",
+      "description": "Concurrent subagent workflows for parallel task execution and coordination",
+      "github_url": "https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin install superpowers@superpowers-marketplace",
+      "tags": ["agents", "automation", "parallel", "workflow"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "connect-apps",
+      "category": "自动化与系统",
+      "description": "Connect Claude to 500+ apps - send emails, create issues, post to Slack with Composio integration",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/connect-apps",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19354,
+      "install_cmd": "/plugin add ./connect-apps-plugin",
+      "tags": ["integration", "automation", "apps", "api"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "csv-data-summarizer",
+      "category": "数据与分析",
+      "description": "Automatically analyzes CSV files and generates comprehensive insights with visualizations",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/csv-data-summarizer",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19354,
+      "install_cmd": "",
+      "tags": ["data", "analysis", "csv", "visualization"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "postgres",
+      "category": "数据与分析",
+      "description": "Execute safe read-only SQL queries against PostgreSQL databases with multi-connection support",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/postgres",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19354,
+      "install_cmd": "",
+      "tags": ["database", "sql", "data", "query"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "root-cause-tracing",
+      "category": "数据与分析",
+      "description": "Use when errors occur deep in execution and you need to trace back to find the original trigger",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/root-cause-tracing",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19354,
+      "install_cmd": "",
+      "tags": ["debugging", "analysis", "troubleshooting", "development"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "competitive-ads-extractor",
+      "category": "商业与营销",
+      "description": "Extracts and analyzes competitors' ads from ad libraries to understand messaging and creative approaches",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/competitive-ads-extractor",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19354,
+      "install_cmd": "",
+      "tags": ["marketing", "analysis", "business", "research"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "domain-name-brainstormer",
+      "category": "商业与营销",
+      "description": "Generates creative domain name ideas and checks availability across multiple TLDs including .com, .io, .dev, and .ai",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/domain-name-brainstormer",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19354,
+      "install_cmd": "",
+      "tags": ["business", "domain", "brainstorming", "tools"],
+      "project_types": ["nodejs"]
+    },
+    {
+      "name": "lead-research-assistant",
+      "category": "商业与营销",
+      "description": "Identifies and qualifies high-quality leads by analyzing your product, searching for target companies, and providing actionable outreach strategies",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/main/lead-research-assistant",
+      "source": "ComposioHQ/awesome-claude-skills",
+      "stars": 19354,
+      "install_cmd": "",
+      "tags": ["business", "research", "sales", "marketing"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "bioinformatics-analysis",
+      "category": "科学与研究",
+      "description": "Sequence analysis, single-cell RNA-seq, gene regulatory networks, variant annotation, phylogenetic analysis",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/bioinformatics",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5927,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": ["science", "bioinformatics", "genomics", "research"],
+      "project_types": ["python"]
+    },
+    {
+      "name": "cheminformatics-drug-discovery",
+      "category": "科学与研究",
+      "description": "Molecular property prediction, virtual screening, ADMET analysis, molecular docking, lead optimization",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cheminformatics",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5927,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": ["science", "chemistry", "drug-discovery", "research"],
+      "project_types": ["python"]
+    },
+    {
+      "name": "clinical-research",
+      "category": "科学与研究",
+      "description": "Clinical trials, pharmacogenomics, variant interpretation, drug safety, clinical decision support, treatment planning",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinical",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5927,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": ["science", "clinical", "healthcare", "research"],
+      "project_types": ["python"]
+    },
+    {
+      "name": "medical-imaging",
+      "category": "科学与研究",
+      "description": "DICOM processing, whole slide image analysis, computational pathology, radiology workflows",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/medical-imaging",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5927,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": ["science", "medical", "imaging", "healthcare"],
+      "project_types": ["python"]
+    },
+    {
+      "name": "machine-learning",
+      "category": "科学与研究",
+      "description": "Deep learning, reinforcement learning, time series analysis, model interpretability, Bayesian methods",
+      "github_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/machine-learning",
+      "source": "K-Dense-AI/claude-scientific-skills",
+      "stars": 5927,
+      "install_cmd": "/plugin install scientific-skills@claude-scientific-skills",
+      "tags": ["science", "ml", "ai", "research"],
+      "project_types": ["python"]
+    },
+    {
+      "name": "obra/superpowers",
+      "category": "社区库与集合",
+      "description": "Core skills library for Claude Code with 20+ battle-tested skills including TDD, debugging, and collaboration patterns",
+      "github_url": "https://github.com/obra/superpowers",
+      "source": "obra/superpowers",
+      "stars": 22619,
+      "install_cmd": "/plugin marketplace add obra/superpowers-marketplace",
+      "tags": ["library", "tdd", "debugging", "development"],
+      "project_types": ["nodejs", "python"]
+    },
+    {
+      "name": "Skill_Seekers",
+      "category": "社区库与集合",
+      "description": "Automatically converts any documentation website into a Claude AI skill in minutes",
+      "github_url": "https://github.com/yusufkaraaslan/Skill_Seekers",
+      "source": "community",
+      "stars": 0,
+      "install_cmd": "",
+      "tags": ["tool", "conversion", "documentation", "automation"],
+      "project_types": ["nodejs", "python"]
+    }
+  ],
+  "recommended_mcp": [],
+  "recommended_plugins": []
+}

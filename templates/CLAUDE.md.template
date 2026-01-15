@@ -1,0 +1,39 @@
+# CLAUDE.md 模板
+
+用于生成项目 CLAUDE.md 的模板。
+
+## 基础模板
+
+```markdown
+# {PROJECT_NAME}
+
+## 项目概述
+
+{PROJECT_DESCRIPTION}
+
+## 技术栈
+
+- **类型**: {PROJECT_TYPE}
+- **框架**: {FRAMEWORK}
+- **语言**: {LANGUAGE}
+
+## 开发规范
+
+### 代码风格
+{CODE_STYLE_RULES}
+
+### Git 提交规范
+使用 conventional commits 格式：
+- feat: 新功能
+- fix: 修复
+- docs: 文档
+- refactor: 重构
+
+## 常用命令
+
+{COMMON_COMMANDS}
+
+## 项目结构
+
+{PROJECT_STRUCTURE}
+```
